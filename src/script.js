@@ -4,19 +4,22 @@
 // @param {number} sonAge
 // @returns {number} количество лет через сколько отец будет старше
 
-function calculateAge(ageFather, ageSon) {
-    if (Math.abs(ageFather - ageSon) < 15){
-        return -1;
+function calculateAge(fatherAge, sonAge) {
+    if (sonAge <= 0 || fatherAge <= 0 || fatherAge - sonAge < 15) {
+      return -1;
     }
-const years = Math.abs(ageSon - ageFather);
+    let years = 0;
+    while ((sonAge + years) * 2 < fatherAge + years) {
+      years++;
+    }
     return years;
-};
-const ageFather = 30;
-const ageSon = 20;
-const ageDifference = calculateAge(ageFather, ageSon);
-
-if (ageDifference === -1) {
-    console.log("Разница в возрасте меньше 15 лет.");
+  }
+  const ageFather = 50;
+  const ageSon = 20;
+  const ageDifference = calculateAge(ageFather, ageSon);
+  
+  if (ageDifference === -1) {
+    console.log("Некорректный возраст.");
   } else {
-    console.log(`Отцу потребуется ${ageDifference} лет, чтобы стать вдвое старше сына.`);
+    console.log(`Через ${ageDifference} лет, отец будет вдвое старше сына.`);
   }
