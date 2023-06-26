@@ -5,7 +5,6 @@
 // @returns {number} количество лет через сколько отец будет старше
 
 const ageTwoFold = (sonAge, fatherAge) => {
-  let result = 0;
   if (fatherAge - sonAge < 15 || sonAge < 0) {
     return 'You entered wrong age.';
   }
