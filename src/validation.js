@@ -1,5 +1,5 @@
 function validateGroups(arrGroups) {
-    const regex = /^(FD|FM|FE)20\d{2}-\d{1,}$/;
+    const regex = /^(FD|FM|fe|FE)20\d{2}-\d{1,}$/;
   
     arrGroups.forEach(group => {
       if (regex.test(group)) {
