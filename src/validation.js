@@ -1,5 +1,7 @@
+'use strict';
+
 function validateGroups(arrGroups) {
-    const regex = /^(FD|FM|fe|FE)20\d{2}-\d{1,}$/;
+    const regex = /^(FD|FM|FE)|(fd|fm|fe)20\d{2}(-\d+)?$/g;
   
     arrGroups.forEach(group => {
       if (regex.test(group)) {
@@ -13,7 +15,7 @@ function validateGroups(arrGroups) {
   const arrGroups = [
     'FE2021-5',
     'Fe2020-2',
-    'FD2021-3',
+    'FD2021',
     'fD2022-1',
     'FE2020-3',
     'FD2020/2',
